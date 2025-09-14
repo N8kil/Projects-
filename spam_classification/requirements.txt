@@ -1,0 +1,43 @@
+# 📧 Spam Classification using Machine Learning
+
+This project classifies SMS messages as **Spam** or **Ham** using Natural Language Processing (NLP) and machine learning.
+
+---
+
+## 📂 Project Structure
+- `data/` → Contains sample dataset (full dataset link in Kaggle/README)  
+- `notebooks/` → Jupyter notebooks for exploration and model training  
+- `README.md` → Project documentation  
+
+---
+
+## 🚀 Workflow
+1. Data preprocessing (cleaning, stopword removal, lemmatization)  
+2. Feature extraction (TF-IDF vectorization)  
+3. Model training (Logistic Regression, Random Forest, Naive Bayes)  
+4. Model evaluation (Accuracy, Precision, Recall, F1-score, ROC-AUC)  
+5. Visualization (WordClouds for spam vs ham messages)  
+
+---
+
+## 🛠️ Tech Stack
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- NLTK  
+- WordCloud, Matplotlib  
+
+---
+
+## 📊 Results
+- Accuracy: **97%**  
+- ROC-AUC: **0.98**  
+- High Precision & Recall balance  
+
+---
+
+## 📌 How to Run
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/<your-username>/Spam-Classification.git
+   cd Spam-Classification

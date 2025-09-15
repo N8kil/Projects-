@@ -34,10 +34,3 @@ This project classifies SMS messages as **Spam** or **Ham** using Natural Langua
 - ROC-AUC: **0.98**  
 - High Precision & Recall balance  
 
----
-
-## 📌 How to Run
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/<your-username>/Spam-Classification.git
-   cd Spam-Classification

@@ -1,66 +1,81 @@
-# Odd Cycle Condition in Graphs using Reinforcement Learning
+🔗 Odd Cycle Graph Generation using Reinforcement Learning
+📌 Project Overview
 
-## 📌 Overview
-This project explores **graph generation under the Odd Cycle Condition (OCC)** using **Reinforcement Learning (RL)**.  
-The OCC states that in any connected component, **any two odd cycles without common vertices must be linked by at least one edge**.  
+This project focuses on generating graphs that satisfy the Odd Cycle Condition using Reinforcement Learning (RL). The odd cycle condition ensures that:
 
-We model this as an RL problem:
-- **State:** Graph adjacency matrix  
-- **Action:** Add/remove edges  
-- **Reward:** Positive for forming odd cycles, negative for invalid/self-loop edges  
-- **Algorithm:** PPO (Proximal Policy Optimization)  
+Within any connected component of the graph,
 
----
+Any two odd cycles without common vertices must be connected by at least one edge.
 
-## ⚙️ Methodology
-1. **Custom Gym Environment**
-   - Implemented in `odd_cycle_env.py`
-   - Handles graph initialization, edge updates, and reward shaping
-2. **Training**
-   - PPO agent trained with Stable-Baselines3
-   - Rewards shaped to encourage valid odd cycles while avoiding isolated vertices
-3. **Evaluation**
-   - Odd cycles detected using `networkx.cycle_basis`
-   - Graphs visualized with **NetworkX + Matplotlib**
+The solution leverages Proximal Policy Optimization (PPO) and reinforcement learning frameworks to iteratively construct valid graphs.
 
----
+🎯 Objectives
 
-## 📊 Results
+Formulate graph generation as a combinatorial optimization problem.
 
-The agent successfully generates graphs that satisfy the **Odd Cycle Condition**.  
-Odd cycles are highlighted in **red**, and their lengths are shown explicitly.
+Use Reinforcement Learning to build graphs step by step.
 
-![Final Graph](results/final_graph.png)
+Ensure generated graphs always satisfy odd cycle condition.
 
-Example:  
-- **Number of odd cycles:** 4  
-- **Lengths of odd cycles:** [3, 3, 5, 3]  
-- **Graph density:** ~0.44  
+Evaluate performance on different graph sizes (number of vertices).
 
----
+⚙️ Methodology
+1. Graph Representation
 
-## 📈 Connectivity vs Vertices
-We also studied the relationship between the **number of vertices** and the **ratio of odd cycles**.
+Nodes = vertices
 
-![Connectivity Plot](results/intermediate_graphs/connectivity_plot.png)
+Actions = adding an edge between two vertices
 
----
+State = current partial graph
 
-## 📂 Repository Structure
-- `src/` → environment, training, evaluation scripts  
-- `notebooks/` → Jupyter notebook with experiments  
-- `reports/` → project reports & presentation  
-- `results/` → saved graphs and plots  
+Reward = positive if odd cycle condition satisfied, negative otherwise
 
----
+2. RL Setup
 
-## 🚀 How to Run
-```bash
-# Install dependencies
-pip install -r requirements.txt
+Environment: Custom Gymnasium environment for graph generation
 
-# Train PPO agent
-python src/train.py
+Algorithm: Proximal Policy Optimization (PPO)
 
-# Evaluate trained model
-python src/evaluate.py
+Libraries: NetworkX, Gymnasium, Stable-Baselines3
+
+3. Training Flow
+
+Start with an empty graph (given number of vertices).
+
+RL agent chooses edges to add.
+
+At each step, validate odd cycle condition.
+
+Agent receives reward based on validity.
+
+Repeat until graph is complete.
+
+🧪 Experiments & Results
+
+Generated graphs with 5–20 vertices under PPO.
+
+Verified odd cycle condition using NetworkX cycle detection.
+
+Reward function tuned for faster convergence.
+
+Visualization: Graph plots show connected odd cycles satisfying conditions.
+
+📈 Key Learnings
+
+Reward shaping was critical to enforce structural graph properties.
+
+PPO provided stable training compared to vanilla policy gradient methods.
+
+Small graphs converged quickly, while larger graphs needed more exploration.
+
+🔧 Tech Stack
+
+Python
+
+NetworkX
+
+Gymnasium (Custom RL environment)
+
+Stable-Baselines3 (PPO)
+
+Matplotlib

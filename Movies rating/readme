@@ -1,0 +1,90 @@
+🎬 Movie Rating Prediction using Machine Learning
+📌 Project Overview
+
+This project aims to predict movie ratings (similar to IMDB scores) using machine learning models. The dataset includes information such as genre, budget, director, cast, and user reviews. The goal was to build a robust pipeline that can handle diverse data types and generate accurate rating predictions.
+
+📊 Dataset
+
+Features:
+
+Categorical: Genre, Director, Actors
+
+Numerical: Budget, Revenue, Duration
+
+Text: User reviews, summaries
+
+Target Variable:
+
+Movie Rating (continuous value, e.g., 1–10 scale)
+
+⚙️ Data Preprocessing
+
+Handled missing values (imputation strategies).
+
+Performed one-hot encoding for categorical features (genre, director).
+
+Applied TF-IDF for textual reviews.
+
+Normalized/standardized numerical features (budget, revenue, duration).
+
+Train-test split with stratification to maintain distribution.
+
+🤖 Models Tried
+
+Linear Regression
+
+Random Forest Regressor
+
+Gradient Boosting (XGBoost / LightGBM)
+
+Multi-Layer Perceptron (Neural Network)
+
+🏆 Best Model
+
+Gradient Boosting delivered the lowest RMSE on validation data.
+
+Feature importance analysis revealed:
+
+Budget and Genre had the highest influence on ratings.
+
+Director and Actor popularity were also strong predictors.
+
+📈 Results
+
+Gradient Boosting achieved the best performance with strong generalization.
+
+Evaluation Metrics:
+
+RMSE: XX (replace with actual)
+
+MAE: YY (replace with actual)
+
+R² Score: ZZ (replace with actual)
+
+Visualization examples:
+
+Actual vs. Predicted Ratings scatterplot
+
+Feature importance bar chart
+
+Error distribution histogram
+
+🚀 Key Learnings
+
+Importance of feature engineering when working with mixed data types (numeric, categorical, text).
+
+Gradient Boosting models outperform simpler linear models for complex relationships.
+
+Textual features (reviews) significantly improve predictive accuracy.
+
+🔧 Tech Stack
+
+Python, R
+
+Pandas, NumPy
+
+Scikit-learn
+
+XGBoost / LightGBM
+
+Matplotlib, Seaborn

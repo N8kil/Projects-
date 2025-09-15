@@ -26,11 +26,5 @@ We used **paired t-test** on matched case-control data of 30 patients to evaluat
 - t-statistic = **6.04**, p-value = **1.42e-06**.  
 - Conclusion: The new surgical procedure **significantly reduces** hospital stay (rejecting H0 at α=0.05).  
 
----
 
-## 🚀 How to Run
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/<your-username>/Surgical-Procedure-Impact-Analysis.git
-   cd Surgical-Procedure-Impact-Analysis
 
